@@ -39,9 +39,9 @@ nefFileNameList = glob.glob(nefFilePath + '/*.NEF')
 # print_list(nefFileNameList)
 print('[{}] NEF files present.' .format(len(nefFileNameList)))
 
+input('Press any key to Proceed...')
 
 deletedFiles = []
-
 if len(jpgFileNameList) > 0:
     # Delete extra NEF Files only if JPG files list is Valid, and not Blank
     n = 0
@@ -75,7 +75,8 @@ if len(jpgFileNameList) > 0:
             deletedFiles.append(nefFullFileName)
             delete_file(nefFullFileName)
 
-print('Total [{}] Files Deleted!!' .format(len(deletedFiles)))
 
 if len(deletedFiles) > 0:
     print(deletedFiles)
+
+print('Total [{}] Files Deleted!!' .format(len(deletedFiles)))
