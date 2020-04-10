@@ -38,6 +38,7 @@ nefFileNameList = glob.glob(nefFilePath + '/*.NEF')
 print_list(nefFileNameList)
 
 
+deletedFiles = []
 # Delete extra NEF Files
 n = 0
 for nefFullFileName in nefFileNameList:
@@ -66,4 +67,8 @@ for nefFullFileName in nefFileNameList:
 
     if not found:
         print('NO Match: Deleting NEF File [{}]' .format(nefFullFileName))
+        deletedFiles.append(nefFullFileName)
         delete_file(nefFullFileName)
+
+print('Total [{}] Files Deleted!!' .format(len(deletedFiles)))
+print(deletedFiles)
